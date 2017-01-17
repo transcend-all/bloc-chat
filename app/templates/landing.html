@@ -1,0 +1,31 @@
+<div id="sidebar">
+    <div id="title"><h1>Bloc Chat</h1></div>
+    
+    <div id="new-room-button"><button ng-click="Landing.openModalInstance()">New Room</button></div>
+    
+
+
+<div id="rooms-list" ng-repeat="room in Landing.rooms">
+    <div id="rooms-id" ng-click="Landing.currentRoom = room; counter = room.$id; Landing.currentMessage = Landing.messages[counter]; Landing.logout()">
+        {{room.name}}<br>
+    </div>
+</div>
+
+</div>
+
+<div id="chat-room">
+    
+    <div class="message-container">
+        <div id="message-list">
+            {{Landing.currentMessage.username}}<br>
+            {{Landing.currentMessage.content}}
+        </div>
+    </div>
+    
+    
+    
+    <div id="message-bar">
+        <input id="new-message-input" type=text>
+        <button id="submit-message-button" ng-click="Landing.send">Submit</button>
+    </div>
+</div>

@@ -2,7 +2,7 @@ body{
     
 }
 
-#sidebar{
+#sidebar-01{
     position: absolute;
     top: 0px;
     left: 0px;
@@ -69,19 +69,4 @@ body{
     background-color: blue;
     color: white;
     border-radius: 5px;
-}
-
-.message-container{
-    height: 10%;
-    width: 90%;
-    border-radius: 10px;
-    background-color: white;
-    position: relative;
-    top: 20px;
-    left: 20px;
-}
-
-#message-list{
-    position: relative;
-    top: 20%;
 }

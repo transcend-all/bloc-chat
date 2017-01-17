@@ -1,0 +1,22 @@
+<div id="sidebar-01">
+    <div id="title"><h1>Bloc Chat</h1></div>
+    
+    <div id="new-room-button"><button ng-click="Rume.openModalInstance()">New Room</button></div>
+    
+    
+<!--    <div id="test2" >{{yourName}}</div>-->
+
+<div id="rooms-list" ng-repeat="room in Rume.rooms">
+    <div id="rooms-id" ng-click="Rume.currentRoom = room; Rume.logout()">
+        {{room.$value}}</br>
+    </div>
+</div>
+
+</div>
+
+<div id="chat-room">
+    <div id="message-bar">
+        <input id="new-message-input" type=text>
+        <button id="submit-message-button">Submit</button>
+    </div>
+</div>

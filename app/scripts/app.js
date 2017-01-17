@@ -2,22 +2,22 @@
     function config($stateProvider, $locationProvider){
         $locationProvider
             .html5Mode({
-               enabled: true,
+                enabled: true,
                 requireBase: false
             });
         
-        $stateProvider
-            .state('home', {
-                url: '/',
-                controller: 'RoomCtrl as Rume',
-                templateUrl: '../templates/home.html'
-            });
+    $stateProvider
+        .state('landing', {
+            url: '/',
+            controller: 'LandingCtrl as Landing',
+            templateUrl: '/templates/landing.html'
         
+        })
+                
     }
-    
-    
-    angular
-        .module('blocChat', ['ui.router', 'firebase'])
-        .config(config);
-    
+
+angular
+    .module('blocChat', ['ui.router', 'firebase', 'ngCookies', 'ui.bootstrap'])
+    .config(config);
+
 })();
