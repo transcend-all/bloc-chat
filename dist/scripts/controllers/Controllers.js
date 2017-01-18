@@ -3,6 +3,7 @@
          var landing = this;
         var counter = 0;
         
+        
         landing.bar = function(){
             alert('bar');
         };
@@ -22,7 +23,9 @@
         }
         
         this.addMessage = function(currentRoomId, newMessageText){
-            Message.addMessage(currentRoomId, newMessageText);
+            var ts = new Date();
+            var timeStamp = ts.toString();
+            Message.addMessage(currentRoomId, newMessageText, timeStamp);
             this.messages.newMessageText = "";
         }
         
@@ -32,6 +35,8 @@
                 controller: 'ModalCtrl as Md'
             });
         };
+        
+        
         
         
         
@@ -74,8 +79,9 @@
             $uibModal.close();
         }
         
-        this.setCurrentUser = function(){
-            var username = $scope.username;
+        this.setCurrentUser = function(un){
+            var username = un;
+            console.log(username);
             $cookies.put('blocChatCurrentUser', username);
             $uibModal.close();
         }

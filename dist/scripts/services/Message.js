@@ -12,15 +12,13 @@
                 
         return {
             all: message,
-            getByRoomId: function(roomId){
-                //filter messages
-            },
             
-            addMessage: function(currentRoomId, newMessageText){
+            addMessage: function(currentRoomId, newMessageText, timeStamp){
                 message.$add({
-                    //username: $cookies.get('blocChatCurrentUser'),
+                    username: $cookies.get('blocChatCurrentUser'),
                     content: newMessageText,
-                    roomId: currentRoomId
+                    roomId: currentRoomId,
+                    time: timeStamp
                 })
             },
             

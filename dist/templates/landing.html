@@ -17,13 +17,13 @@
     
     <div class="message-container" ng-repeat="message in Landing.currentMessage">
         <div id="message-username">
-            Username
+            {{message.username}}
         </div>
         <div id="message-list">
             {{message.content}}
         </div>
         <div id="message-time">
-            Time
+            {{message.time}}
         </div>
     </div>
     
