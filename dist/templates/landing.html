@@ -6,7 +6,7 @@
 
 
 <div id="rooms-list" ng-repeat="room in Landing.rooms">
-    <div id="rooms-id" ng-click="Landing.currentRoom = room; counter = room.$id; Landing.currentMessage = Landing.messages[counter]; Landing.logout()">
+    <div id="rooms-id" ng-click="Landing.currentRoom = room; Landing.updateMessages(room)">
         {{room.name}}<br>
     </div>
 </div>
@@ -15,17 +15,22 @@
 
 <div id="chat-room">
     
-    <div class="message-container">
+    <div class="message-container" ng-repeat="message in Landing.currentMessage">
+        <div id="message-username">
+            Username
+        </div>
         <div id="message-list">
-            {{Landing.currentMessage.username}}<br>
-            {{Landing.currentMessage.content}}
+            {{message.content}}
+        </div>
+        <div id="message-time">
+            Time
         </div>
     </div>
     
     
     
     <div id="message-bar">
-        <input id="new-message-input" type=text>
-        <button id="submit-message-button" ng-click="Landing.send">Submit</button>
+        <input id="new-message-input" type=text ng-model="newMessageText">
+        <button id="submit-message-button" ng-click='Landing.addMessage(Landing.currentRoom.$id, newMessageText); newMessageText = ""'>Submit</button>
     </div>
 </div>

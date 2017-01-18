@@ -16,6 +16,11 @@
             }
         };
         
+        
+        this.foo = function(){
+            alert('foo');
+        }
+        
     }
     
     angular

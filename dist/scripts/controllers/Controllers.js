@@ -9,20 +9,22 @@
         
         landing.rooms = Room.all;
         landing.messages = Message.all;
+        landing.send = Message.send;
         
+        
+                
         landing.rooms.$loaded().then(function(){
-        landing.currentRoom = landing.rooms[0];
-        landing.currentMessage = landing.messages[0];
-        })
-        
-       
-
-        landing.logout = function(){
-            
-            console.log(landing.currentRoom);
+            landing.currentRoom = landing.rooms[0];
+            landing.currentMessage = Message.currentRoomMessages(landing.currentRoom);
+        })       
+        landing.updateMessages = function(room){
+            landing.currentMessage = Message.currentRoomMessages(room);
         }
         
-               
+        this.addMessage = function(currentRoomId, newMessageText){
+            Message.addMessage(currentRoomId, newMessageText);
+            this.messages.newMessageText = "";
+        }
         
         this.openModalInstance = function(){
             $uibModal.open({
@@ -31,7 +33,20 @@
             });
         };
         
-        landing.send = Message.addMessage;
+        
+        
+        
+        //tests
+        
+        landing.foo = function(){
+            alert(landing.messages);
+        }
+       
+        landing.logout = function(){
+            console.log(landing.currentRoom);
+        }
+        
+//        landing.send = Message.addMessage;
     }
     
     angular
@@ -47,12 +62,12 @@
 (function(){
     function ModalCtrl($scope, $uibModal, Room, $cookies){
         this.addRoom = function(newRoomText){
-//            if(!$scope.newRoomText){
-//                alert("Please Enter Room Name");
-//            }else{
+            if(!newRoomText){
+                alert("Please Enter Room Name");
+            }else{
                 Room.addRoom(newRoomText);
                 $uibModal.close();
-//            }
+            }
         };
                 
         this.cancel = function(){
@@ -67,10 +82,7 @@
         
         
         
-        this.foo = function(){
-            alert('foo');
-        }
-        
+            
     }
     
       
@@ -88,6 +100,7 @@
 (function(){
     function MessageCtrl(Room, Message){
         
+                
     }
     
     

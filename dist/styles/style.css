@@ -72,16 +72,35 @@ body{
 }
 
 .message-container{
-    height: 10%;
     width: 90%;
+    border: 1px solid black;
     border-radius: 10px;
     background-color: white;
     position: relative;
     top: 20px;
     left: 20px;
+    margin-bottom: 5px;
 }
 
 #message-list{
     position: relative;
+    left: 5px;
     top: 20%;
+    left: 5px;
+}
+
+#message-username{
+    position: relative;
+    left: 20px;
+    font-style: italic;
+    color: grey;
+}
+
+#message-time{
+    position: relative;
+    left: 95%;
+    bottom: 10px;
+    font-style: italic;
+    color: grey;
+    font-size: 0.5em;
 }
