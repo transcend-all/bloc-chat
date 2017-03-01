@@ -1,3 +1,12 @@
+# Evan's Note
+
+Bloc Chat was my second AngularJS project for Bloc. The instructions for Bloc Chat were much less direct and specific than for Bloc Jams, and I had to figure out a large amount of logic on my own. This project helped to solidify my understanding of what an MVC app is by incorporating Firebase, a backend-as-a-service web app, to do database operations. 
+
+After finishing this, I became very excited about the possibilities of building web apps that integrate with a database, but I had to go back to introductory lessons on Ruby before I was given my next opportunity to build one. Ultimately, I'm glad that I had to do that, because I like Ruby on Rails much better than AngularJS for working on MVC apps. I thus consider this to be an important learning experience even if it does not directly contribute to my resume as a Rails developer.
+
+What follows is the standard documentation for a Bloc AngularJS starter project.
+
+
 ## Bloc Frontend Project Starter
 
 A starter application for student projects in Bloc's [Frontend Web Development Course](https://www.bloc.io/frontend-development-bootcamp).
